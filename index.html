@@ -1,1 +1,72 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Мій сайт</title></head><body><h1>Привіт, світе! Сайт працює.</h1></body></html>
+<!-- index.html version 1.0.0 -->
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акция — Аркадия Гостевой Дом</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+
+    <main class="page-container">
+        <div class="promo-card">
+
+            <!-- Верхній банер з акцією -->
+            <div class="promo-banner">
+                <img src="assets/images/promotion_beach.webp" alt="Акция: скидки до 30%">
+            </div>
+
+            <!-- Основний контент з формою -->
+            <div class="promo-content">
+
+                <!-- Логотип гостьового дому -->
+                <div class="brand-logo">
+                    <img src="assets/images/logo-300x200.svg" alt="Аркадия Гостевой Дом">
+                </div>
+
+                <!-- Форма контактних даних -->
+                <form id="leadForm" class="contact-form" novalidate>
+
+                    <div class="form-group">
+                        <label for="fullName">Ваше Имя Фамилия</label>
+                        <input type="text" id="fullName" name="fullName" required minlength="2"
+                            placeholder="Иван Иванов" autocomplete="name">
+                        <span class="error-text" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Ваш номер телефона</label>
+                        <input type="tel" id="phone" name="phone" required pattern="^\+?[0-9\s\-\(\)]{10,18}$"
+                            placeholder="+7 (978) 000-00-00" autocomplete="tel">
+                        <span class="error-text" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Ваш E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="example@mail.com"
+                            autocomplete="email">
+                        <span class="error-text" id="emailError"></span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Отправить</button>
+
+                    <p class="privacy-notice">
+                        Имя вашего профиля Google не отображается. Никогда не присылайте пароли.
+                    </p>
+
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

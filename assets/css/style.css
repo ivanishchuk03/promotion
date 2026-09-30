@@ -1,0 +1,220 @@
+/* ==========================================================================
+   1. Скидання та базові налаштування
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-page: #f2ede4;
+    /* Світлий бежевий фон сторінки */
+    --bg-card: #fdfaf4;
+    /* Кремовий фон картки (як у макеті) */
+    --card-border: #ede4d3;
+    /* Колір тонкої рамки картки */
+    --primary-brown: #6b4a1b;
+    /* Фірмовий коричневий колір кнопки та тексту */
+    --primary-hover: #543913;
+    /* Колір кнопки при наведенні */
+    --text-label: #7c5a28;
+    /* Колір міток полів (золотисто-коричневий) */
+    --input-border: #dfd5c4;
+    /* Бордер полів за замовчуванням */
+    --input-focus: #b58c54;
+    /* Бордер поля в фокусі */
+    --error-color: #d32f2f;
+    /* Колір тексту та контуру помилки */
+    --success-color: #2e7d32;
+    /* Колір повідомлення про успіх */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-page);
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+/* ==========================================================================
+   2. Головна картка-модалка
+   ========================================================================== */
+.page-container {
+    width: 100%;
+    max-width: 500px;
+    /* Оптимальна ширина під мобільний макет */
+    margin: 0 auto;
+}
+
+.promo-card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    /* Щоб банер не вилазив за заокруглені кути */
+}
+
+/* Верхній банер */
+.promo-banner {
+    width: 100%;
+    line-height: 0;
+}
+
+.promo-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Контентна частина */
+.promo-content {
+    padding: 30px 35px 25px 35px;
+}
+
+/* Логотип */
+.brand-logo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.brand-logo img {
+    max-width: 230px;
+    height: auto;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   3. Форма та поля вводу
+   ========================================================================== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-label);
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    font-size: 15px;
+    color: #333;
+    background-color: #ffffff;
+    border: 1.5px solid var(--input-border);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #b0a798;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(181, 140, 84, 0.15);
+}
+
+/* Помилки валідації полів */
+.form-group input.is-invalid {
+    border-color: var(--error-color);
+    background-color: #fff9f9;
+}
+
+.error-text {
+    font-size: 12px;
+    color: var(--error-color);
+    margin-top: 4px;
+    min-height: 16px;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   4. Кнопка відправки та додатковий текст
+   ========================================================================== */
+.btn-submit {
+    width: 100%;
+    height: 48px;
+    background-color: var(--primary-brown);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(107, 74, 27, 0.25);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+.privacy-notice {
+    font-size: 11px;
+    color: #9c9183;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.form-status {
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-status.success {
+    color: var(--success-color);
+}
+
+/* ==========================================================================
+   5. Адаптивність під екрани смартфонів
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .promo-card {
+        border-radius: 0;
+        border: none;
+        min-height: 100vh;
+    }
+
+    .promo-content {
+        padding: 20px 20px;
+    }
+
+    .brand-logo img {
+        max-width: 190px;
+    }
+}
