@@ -110,7 +110,7 @@ body {
     font-size: 14px;
     font-weight: 500;
     color: var(--text-label);
-    margin-bottom: 6px;
+    margin-bottom: 2px;
 }
 
 .form-group input {
