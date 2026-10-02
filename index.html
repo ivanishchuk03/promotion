@@ -57,6 +57,23 @@
                         <span class="error-text" id="emailError"></span>
                     </div>
 
+                    <!-- Блок згоди на обробку даних -->
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label" for="consent">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                Я даю согласие на обработку моих персональных данных в целях обработки заявки и обратной
+                                связи.
+                            </span>
+                        </label>
+                        <p class="consent-hint">
+                            Вы можете отозвать своё согласие, написав на почту <a
+                                href="mailto:arkadiaotel@mail.ru">arkadiaotel@mail.ru</a>
+                        </p>
+                        <span class="error-text" id="consentError"></span>
+                    </div>
+
                     <button type="submit" class="btn-submit">Отправить</button>
 
                     <div class="form-status" id="formStatus"></div>

@@ -162,6 +162,97 @@ body {
     line-height: 1.4;
 }
 
+/* Чекбокс згоди */
+.checkbox-group {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    /* Ховаємо стандартний чекбокс браузера */
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Кастомний квадрат чекбокса */
+.checkbox-custom {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    background-color: #ffffff;
+    border: 1.5px solid var(--input-border);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Галочка всередині квадрата */
+.checkbox-custom::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Стан: вибрано */
+.checkbox-label input[type="checkbox"]:checked~.checkbox-custom {
+    background-color: var(--primary-brown);
+    border-color: var(--primary-brown);
+}
+
+.checkbox-label input[type="checkbox"]:checked~.checkbox-custom::after {
+    display: block;
+}
+
+/* Помилка: якщо не поставлено галочку */
+.checkbox-label input[type="checkbox"].is-invalid~.checkbox-custom {
+    border-color: var(--error-color);
+    background-color: #fff9f9;
+}
+
+/* Текст згоди */
+.checkbox-text {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #555555;
+}
+
+/* Примітка про відкликання згоди */
+.consent-hint {
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #8c8273;
+    margin-top: 6px;
+    padding-left: 28px;
+    /* Вирівнювання під текст після іконки чекбокса */
+}
+
+.consent-hint a {
+    color: var(--primary-brown);
+    text-decoration: underline;
+}
+
+.consent-hint a:hover {
+    text-decoration: none;
+}
+
 /* ==========================================================================
    4. Кнопка відправки та додатковий текст
    ========================================================================== */
